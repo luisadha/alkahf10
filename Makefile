@@ -2,7 +2,7 @@ PREFIX  := /data/data/com.termux/files/usr
 MANDIR  := $(PREFIX)/share/man
 BINDIR  := $(PREFIX)/bin
 SOURCE  := index.html
-TARGET  := qunut
+TARGET  := kahf
 
 install:
 	@mkdir -p $(BINDIR)
