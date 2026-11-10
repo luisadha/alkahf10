@@ -2,6 +2,6 @@
 # WRAPPER: IMPORTANT DON'T CHANGE ANYTHING HERE
 [ -z "$BASH_VERSION" ] && exec bash "$0" "$@"
 unset HISTSIZE
-__BASE_REPO__="qunut"
+__BASE_REPO__="alkahf10"
 __DIR__="${HOME}/.basher/cellar/packages/luisadha/${__BASE_REPO__}"
 exec bash ${__DIR__}/index.html "$@"
