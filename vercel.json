@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/qunut",
-      "destination": "/api/qunut.js"
+      "source": "/api/kahf",
+      "destination": "/api/kahf.js"
     }
   ]
 }
