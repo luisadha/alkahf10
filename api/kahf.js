@@ -9,7 +9,7 @@ module.exports = (req, res) => {
     const filePath = path.join(
       __dirname,
       '..',
-      'qunut.json'
+      'kahf.json'
     );
 
     const data = JSON.parse(
