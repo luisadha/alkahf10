@@ -38,11 +38,16 @@ module.exports = (req, res) => {
         .split(';')
         .filter(Boolean)
         .map(cookie => {
-          const parts = cookie.trim().split('=');
+          const trimmed = cookie.trim();
+          const eq = trimmed.indexOf('=');
+
+          if (eq === -1) {
+            return [trimmed, ''];
+          }
 
           return [
-            parts[0],
-            decodeURIComponent(parts[1] || '')
+            trimmed.slice(0, eq),
+            decodeURIComponent(trimmed.slice(eq + 1))
           ];
         })
     );
@@ -55,9 +60,15 @@ module.exports = (req, res) => {
     // =========================
     // OPTIONAL QUERY
     // =========================
-    const requestedDay = parseInt(
+    let requestedDay = parseInt(
       req.query.day || currentDay
     );
+
+    // query rusak (bukan angka / kurang dari 1)
+    // -> pakai hari global
+    if (Number.isNaN(requestedDay) || requestedDay < 1) {
+      requestedDay = currentDay;
+    }
 
     // =========================
     // VALIDASI
@@ -90,6 +101,7 @@ module.exports = (req, res) => {
 
     // =========================
     // LOOPING INDEX
+    // ayat 1-10, hari ke-11 kembali ke ayat 1
     // =========================
     const index =
       (requestedDay - 1) % data.length;
@@ -107,6 +119,8 @@ module.exports = (req, res) => {
     // =========================
     // RESPONSE
     // =========================
+    const item = data[index];
+
     res.status(200).json({
       success: true,
 
@@ -116,7 +130,19 @@ module.exports = (req, res) => {
 
       terakhir_dibuka: lastSeenDay,
 
-      doa: data[index]
+      total_ayat: data.length,
+
+      ayat: item.ayat,
+
+      arab: item.arab,
+
+      latin: item.latin,
+
+      terjemahan_id: item.terjemahan_id,
+
+      terjemahan_en: item.terjemahan_en,
+
+      audio_url: item.audio_url
     });
 
   } catch (error) {
