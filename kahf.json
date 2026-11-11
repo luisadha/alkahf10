@@ -1,12 +1,92 @@
-[ 
-  "al-ḫamdu lillâhilladzî anzala ‘alâ ‘abdihil-kitâba wa lam yaj‘al lahû ‘iwajâ",
-  "qayyimal liyundzira ba'san syadîdam mil ladun-hu wa yubasysyiral-mu'minînalladzîna ya‘malûnash-shâliḫâti anna lahum ajran ḫasanâ",
-  "mâkitsîna fîhi abadâ",
-  "wa yundziralladzîna qâluttakhadzallâhu waladâ",
-  "mâ lahum bihî min ‘ilmiw wa lâ li'âbâ'ihim, kaburat kalimatan takhruju min afwâhihim, iy yaqûlûna illâ kadzibâ",
-  "fa la‘allaka bâkhi‘un nafsaka ‘alâ âtsârihim il lam yu'minû bihâdzal-ḫadîtsi asafâ",
-  "innâ ja‘alnâ mâ ‘alal-ardli zînatal lahâ linabluwahum ayyuhum aḫsanu ‘amalâ",
-  "wa innâ lajâ‘ilûna mâ ‘alaihâ sha‘îdan juruzâ",
-  "am ḫasibta anna ash-ḫâbal-kahfi war-raqîmi kânû min âyâtinâ ‘ajabâ",
-  "idz awal-fityatu ilal-kahfi fa qâlû rabbanâ âtinâ mil ladungka raḫmataw wa hayyi' lanâ min amrinâ rasyadâ"
+[
+  {
+    "hari_ke": 1,
+    "ayat": 1,
+    "arab": "اَلْحَمْدُ لِلّٰهِ الَّذِيْٓ اَنْزَلَ عَلٰى عَبْدِهِ الْكِتٰبَ وَلَمْ يَجْعَلْ لَّهٗ عِوَجًا ࣝ",
+    "latin": "al-ḫamdu lillâhilladzî anzala ‘alâ ‘abdihil-kitâba wa lam yaj‘al lahû ‘iwajâ",
+    "terjemahan_id": "Segala puji bagi Allah yang telah menurunkan Kitab Suci (Al-Qur’an) kepada hamba-Nya dan Dia tidak membuat padanya sedikit pun kebengkokan.",
+    "terjemahan_en": "[All] praise is [due] to Allah, who has sent down upon His Servant the Book and has not made therein any deviance.",
+    "audio_url": "https://everyayah.com/data/Alafasy_128kbps/018001.mp3"
+  },
+  {
+    "hari_ke": 2,
+    "ayat": 2,
+    "arab": "قَيِّمًا لِّيُنْذِرَ بَأْسًا شَدِيْدًا مِّنْ لَّدُنْهُ وَيُبَشِّرَ الْمُؤْمِنِيْنَ الَّذِيْنَ يَعْمَلُوْنَ الصّٰلِحٰتِ اَنَّ لَهُمْ اَجْرًا حَسَنًا ۙ",
+    "latin": "qayyimal liyundzira ba'san syadîdam mil ladun-hu wa yubasysyiral-mu'minînalladzîna ya‘malûnash-shâliḫâti anna lahum ajran ḫasanâ",
+    "terjemahan_id": "(Dia juga menjadikannya kitab) yang lurus agar Dia memberi peringatan akan siksa yang sangat pedih dari sisi-Nya dan memberi kabar gembira kepada orang-orang mukmin yang mengerjakan kebajikan bahwa mereka akan mendapat balasan yang baik.",
+    "terjemahan_en": "[He has made it] straight, to warn of severe punishment from Him and to give good tidings to the believers who do righteous deeds that they will have a good reward",
+    "audio_url": "https://everyayah.com/data/Alafasy_128kbps/018002.mp3"
+  },
+  {
+    "hari_ke": 3,
+    "ayat": 3,
+    "arab": "مّٰكِثِيْنَ فِيْهِ اَبَدًا ۙ",
+    "latin": "mâkitsîna fîhi abadâ",
+    "terjemahan_id": "Mereka kekal di dalamnya untuk selama-lamanya.",
+    "terjemahan_en": "In which they will remain forever",
+    "audio_url": "https://everyayah.com/data/Alafasy_128kbps/018003.mp3"
+  },
+  {
+    "hari_ke": 4,
+    "ayat": 4,
+    "arab": "وَّيُنْذِرَ الَّذِيْنَ قَالُوا اتَّخَذَ اللّٰهُ وَلَدًا ۖ",
+    "latin": "wa yundziralladzîna qâluttakhadzallâhu waladâ",
+    "terjemahan_id": "(Dia menurunkan Al-Qur’an itu) juga agar Dia memberi peringatan kepada orang-orang yang berkata, “Allah mengangkat seorang anak.”",
+    "terjemahan_en": "And to warn those who say, \"Allah has taken a son.\"",
+    "audio_url": "https://everyayah.com/data/Alafasy_128kbps/018004.mp3"
+  },
+  {
+    "hari_ke": 5,
+    "ayat": 5,
+    "arab": "مَّا لَهُمْ بِهٖ مِنْ عِلْمٍ وَّلَا لِاٰبَاۤىِٕهِمْ ۗ كَبُرَتْ كَلِمَةً تَخْرُجُ مِنْ اَفْوَاهِهِمْ ۗ اِنْ يَّقُوْلُوْنَ اِلَّا كَذِبًا",
+    "latin": "mâ lahum bihî min ‘ilmiw wa lâ li'âbâ'ihim, kaburat kalimatan takhruju min afwâhihim, iy yaqûlûna illâ kadzibâ",
+    "terjemahan_id": "Mereka sama sekali tidak mempunyai pengetahuan tentang (hal) itu, begitu pula nenek moyang mereka. Alangkah besar (dosa) perkataan yang keluar dari mulut mereka. Mereka hanya mengatakan (sesuatu) kebohongan belaka.",
+    "terjemahan_en": "They have no knowledge of it, nor had their fathers. Grave is the word that comes out of their mouths; they speak not except a lie.",
+    "audio_url": "https://everyayah.com/data/Alafasy_128kbps/018005.mp3"
+  },
+  {
+    "hari_ke": 6,
+    "ayat": 6,
+    "arab": "فَلَعَلَّكَ بَاخِعٌ نَّفْسَكَ عَلٰٓى اٰثَارِهِمْ اِنْ لَّمْ يُؤْمِنُوْا بِهٰذَا الْحَدِيْثِ اَسَفًا",
+    "latin": "fa la‘allaka bâkhi‘un nafsaka ‘alâ âtsârihim il lam yu'minû bihâdzal-ḫadîtsi asafâ",
+    "terjemahan_id": "Maka, boleh jadi engkau (Nabi Muhammad) akan mencelakakan dirimu karena bersedih hati setelah mereka berpaling sekiranya mereka tidak beriman kepada keterangan ini (Al-Qur’an).",
+    "terjemahan_en": "Then perhaps you would kill yourself through grief over them, [O Muhammad], if they do not believe in this message, [and] out of sorrow.",
+    "audio_url": "https://everyayah.com/data/Alafasy_128kbps/018006.mp3"
+  },
+  {
+    "hari_ke": 7,
+    "ayat": 7,
+    "arab": "اِنَّا جَعَلْنَا مَا عَلَى الْاَرْضِ زِيْنَةً لَّهَا لِنَبْلُوَهُمْ اَيُّهُمْ اَحْسَنُ عَمَلًا",
+    "latin": "innâ ja‘alnâ mâ ‘alal-ardli zînatal lahâ linabluwahum ayyuhum aḫsanu ‘amalâ",
+    "terjemahan_id": "Sesungguhnya Kami telah menjadikan apa yang ada di atas bumi sebagai perhiasan baginya agar Kami menguji mereka siapakah di antaranya yang lebih baik perbuatannya.",
+    "terjemahan_en": "Indeed, We have made that which is on the earth adornment for it that We may test them [as to] which of them is best in deed.",
+    "audio_url": "https://everyayah.com/data/Alafasy_128kbps/018007.mp3"
+  },
+  {
+    "hari_ke": 8,
+    "ayat": 8,
+    "arab": "وَاِنَّا لَجٰعِلُوْنَ مَا عَلَيْهَا صَعِيْدًا جُرُزًا ۗ",
+    "latin": "wa innâ lajâ‘ilûna mâ ‘alaihâ sha‘îdan juruzâ",
+    "terjemahan_id": "Kami benar-benar akan menjadikan (pula) apa yang di atasnya sebagai tanah yang tandus lagi kering.",
+    "terjemahan_en": "And indeed, We will make that which is upon it [into] a barren ground.",
+    "audio_url": "https://everyayah.com/data/Alafasy_128kbps/018008.mp3"
+  },
+  {
+    "hari_ke": 9,
+    "ayat": 9,
+    "arab": "اَمْ حَسِبْتَ اَنَّ اَصْحٰبَ الْكَهْفِ وَالرَّقِيْمِ كَانُوْا مِنْ اٰيٰتِنَا عَجَبًا",
+    "latin": "am ḫasibta anna ash-ḫâbal-kahfi war-raqîmi kânû min âyâtinâ ‘ajabâ",
+    "terjemahan_id": "Apakah engkau mengira bahwa sesungguhnya para penghuni gua dan (yang mempunyai) raqīm benar-benar merupakan keajaiban di antara tanda-tanda (kebesaran) Kami?",
+    "terjemahan_en": "Or have you thought that the companions of the cave and the inscription were, among Our signs, a wonder?",
+    "audio_url": "https://everyayah.com/data/Alafasy_128kbps/018009.mp3"
+  },
+  {
+    "hari_ke": 10,
+    "ayat": 10,
+    "arab": "اِذْ اَوَى الْفِتْيَةُ اِلَى الْكَهْفِ فَقَالُوْا رَبَّنَآ اٰتِنَا مِنْ لَّدُنْكَ رَحْمَةً وَّهَيِّئْ لَنَا مِنْ اَمْرِنَا رَشَدًا",
+    "latin": "idz awal-fityatu ilal-kahfi fa qâlû rabbanâ âtinâ mil ladungka raḫmataw wa hayyi' lanâ min amrinâ rasyadâ",
+    "terjemahan_id": "(Ingatlah) ketika pemuda-pemuda itu berlindung ke dalam gua lalu berdoa, “Ya Tuhan kami, anugerahkanlah kepada kami rahmat dari sisi-Mu dan mudahkanlah bagi kami petunjuk untuk segala urusan kami.”",
+    "terjemahan_en": "[Mention] when the youths retreated to the cave and said, \"Our Lord, grant us from Yourself mercy and prepare for us from our affair right guidance.\"",
+    "audio_url": "https://everyayah.com/data/Alafasy_128kbps/018010.mp3"
+  }
 ]
