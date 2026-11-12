@@ -28,5 +28,4 @@ Saya akan melakukan perbaikan dari sisi front end nanti
 # Build with
 - Bash & Curl & FZF
 - Frontend PwaBunga (Css Component & PWA Template) (Github Pages) https://github.com/PwaBunga
-- Backend API NodeJs & Vercel (Production)
-  https://qunut-api.vercel.app
+- Backend API NodeJs & Vercel (Production) https://alkahf10.vercel.app/
