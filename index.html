@@ -50,39 +50,68 @@ else
     printf "${purple}[warn]: ${reset}Legacy execution failed. Falling back...\n"
 
     COOKIE_FILE="$HOME/.kahf_cookie"
-    curl -s \
-    -b "$COOKIE_FILE" \
-    -c "$COOKIE_FILE" \
-        "${API}"/api/kahf \
-    | jq -r '
+
+    # filter jq: 6 kolom dipisah tab
+    JQ_FILTER='
         if .success then
           "Hari ke-\(.hari_ke) · Ayat \(.ayat)\t\(.arab)\t\(.latin)\t\(.terjemahan_id)\t\(.terjemahan_en)\t\(.audio_url)"
         else
           "\(.message // "Terjadi kesalahan")\t\t\t\t\t"
-        end' \
-    | fzf \
-        --disabled \
-        --delimiter=$'\t' \
-        --with-nth=1 \
-        --border=rounded \
-        --height=80% \
-        --layout=reverse \
-        --pointer='📜' \
-        --header='Enter: putar audio · Ctrl-S: stop' \
-        --preview '
-            echo -e "\n📖 HAFALAN AYAT 10 PERTAMA — SURAT AL-KAHFI\n"
-            echo {2} | fold -s -w 60
-            echo -e "\n🔤 Latin\n"
-            echo {3} | fold -s -w 60
-            echo -e "\n🇮🇩 Terjemahan\n"
-            echo {4} | fold -s -w 60
-            echo -e "\n🇬🇧 English\n"
-            echo {5} | fold -s -w 60
-        ' \
-        --preview-window='wrap' \
-        --bind "enter:execute-silent([ -n {6} ] && { mkdir -p ~/.cache/kahf; f=~/.cache/kahf/\$(basename {6}); [ -f \$f ] || curl -sLo \$f {6}; termux-media-player play \$f; })" \
-        --bind "ctrl-s:execute-silent(termux-media-player stop)" \
-        --color="bg:#191724,bg+:#26233A,border:#EBBCBA,fg:#E0DEF4"
+        end'
+
+    # preview: beberapa kotak berwarna (tanpa border kanan,
+    # supaya tidak rusak oleh teks Arab yang RTL)
+    PREVIEW_SH=$(cat <<'EOF'
+box() {
+  pfx=$(printf '\033[%sm│\033[0m  ' "$1")
+  printf '\033[%sm╭─ %s ──────────────────────\033[0m\n' "$1" "$2"
+  if [ "$4" = fold ]; then printf '%s\n' "$3" | fold -s -w 54; else printf '%s\n' "$3"; fi | sed "s/^/$pfx/"
+  printf '\033[%sm╰────────────────────────────\033[0m\n' "$1"
+}
+echo
+box 33 "📖 ARAB" "$1"
+box 35 "🔤 LATIN" "$2" fold
+box 36 "🇮🇩 TERJEMAHAN" "$3" fold
+box 32 "🇬🇧 ENGLISH" "$4" fold
+EOF
+)
+
+    # dipakai oleh bind reload & preview (dijalankan fzf lewat shell anak)
+    export API COOKIE_FILE JQ_FILTER PREVIEW_SH
+    RELOAD='reload(curl -s -b "$COOKIE_FILE" -c "$COOKIE_FILE" "${API%/}/api/kahf" | jq -r "$JQ_FILTER")+refresh-preview'
+
+    if [ -z "$API" ]; then
+        echo "⚠️  Variabel API kosong. Isi dengan URL deployment Vercel-mu."
+    else
+        RESP=$(curl -s \
+            -b "$COOKIE_FILE" \
+            -c "$COOKIE_FILE" \
+            "${API%/}/api/kahf")
+
+        if ! echo "$RESP" | jq -e . >/dev/null 2>&1; then
+            echo "⚠️  API tidak membalas JSON (${API%/}/api/kahf):"
+            echo "$RESP" | head -5
+        else
+            echo "$RESP" \
+            | jq -r "$JQ_FILTER" \
+            | fzf \
+                --disabled \
+                --delimiter=$'\t' \
+                --with-nth=1 \
+                --border=rounded \
+                --border-label=' 📜 AL-KAHFI AYAT 1-10 ' \
+                --height=80% \
+                --layout=reverse \
+                --pointer='📜' \
+                --header='Spasi: putar audio · Ctrl-S: stop · Enter: refresh' \
+                --preview 'bash -c "$PREVIEW_SH" _ {2} {3} {4} {5}' \
+                --preview-window='wrap' \
+                --bind "enter:$RELOAD" \
+                --bind "space:execute-silent([ -n {6} ] && { mkdir -p ~/.cache/kahf; f=~/.cache/kahf/\$(basename {6}); [ -f \$f ] || curl -sLo \$f {6}; termux-media-player play \$f; })" \
+                --bind "ctrl-s:execute-silent(termux-media-player stop)" \
+                --color="bg:#191724,bg+:#26233A,border:#EBBCBA,fg:#E0DEF4"
+        fi
+    fi
 fi
 
 exit 0
