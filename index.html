@@ -2,6 +2,7 @@
 #!/data/data/com.termux/files/usr/bin/env -vS sh
 # Definisi Warna (Menggunakan printf agar kompatibel dengan sh)
 version="1.0.0"; selft="kahf"
+API="https://alkahf10.vercel.app/"
 [ "${1:-}" = "-v" ] || [ "${1:-}" = "--version" ] && echo "$self $version";
 if [[ -r "${BASH_SOURCE[0]}" ]]; then
     self="${BASH_SOURCE[0]}"
@@ -52,7 +53,7 @@ else
     curl -s \
     -b "$COOKIE_FILE" \
     -c "$COOKIE_FILE" \
-        https://kahf-api.vercel.app/api/kahf \
+        "${API}"/api/kahf \
     | jq -r '
         if .success then
           "Hari ke-\(.hari_ke) · Ayat \(.ayat)\t\(.arab)\t\(.latin)\t\(.terjemahan_id)\t\(.terjemahan_en)\t\(.audio_url)"
