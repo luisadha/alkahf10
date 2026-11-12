@@ -14,7 +14,14 @@
 
 ~Saya mengubah structur objek json bukan lagi array untuk variasi data dan mengubah fungsi beckendnya (kahf.js)~
 
-Saat ini saya belum yakin respon request sesuai dengan yang diharapkan. kemudian nyusul mengerjakan ke tampilan & PWA sama skrip cli
+~Saat ini saya belum yakin respon request sesuai dengan yang diharapkan. kemudian nyusul mengerjakan ke tampilan & PWA sama skrip cli~
+
+# Hari ke 3
+~Saya sudah berhasil menyelesaikan tantangan integrasi cli menggunakan fzf~
+
+~Menambahkan nama project ini ke database not-echo-not-true.carrd.co~
+
+Saya akan melakukan perbaikan dari sisi front end nanti
 
 # Credits 
 - Luisadha
