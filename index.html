@@ -48,12 +48,17 @@ if timeout 5s sed -n '/^# BEGIN/,/^# EOF/p' "$self" | "$actual_pager" 2> /dev/nu
 else
     printf "${purple}[warn]: ${reset}Legacy execution failed. Falling back...\n"
 
-COOKIE_FILE="$HOME/.kahf_cookie"
+    COOKIE_FILE="$HOME/.kahf_cookie"
     curl -s \
     -b "$COOKIE_FILE" \
     -c "$COOKIE_FILE" \
         https://kahf-api.vercel.app/api/kahf \
-    | jq -r '"Hari ke-\(.hari_ke)\t\(.doa)"' \
+    | jq -r '
+        if .success then
+          "Hari ke-\(.hari_ke) · Ayat \(.ayat)\t\(.arab)\t\(.latin)\t\(.terjemahan_id)\t\(.terjemahan_en)\t\(.audio_url)"
+        else
+          "\(.message // "Terjadi kesalahan")\t\t\t\t\t"
+        end' \
     | fzf \
         --disabled \
         --delimiter=$'\t' \
@@ -62,11 +67,20 @@ COOKIE_FILE="$HOME/.kahf_cookie"
         --height=80% \
         --layout=reverse \
         --pointer='📜' \
+        --header='Enter: putar audio · Ctrl-S: stop' \
         --preview '
-            echo -e "\n📖 HAFALAN AYAT 10 PERTAMA — SURAT AL-KAHFI \n"
+            echo -e "\n📖 HAFALAN AYAT 10 PERTAMA — SURAT AL-KAHFI\n"
             echo {2} | fold -s -w 60
+            echo -e "\n🔤 Latin\n"
+            echo {3} | fold -s -w 60
+            echo -e "\n🇮🇩 Terjemahan\n"
+            echo {4} | fold -s -w 60
+            echo -e "\n🇬🇧 English\n"
+            echo {5} | fold -s -w 60
         ' \
         --preview-window='wrap' \
+        --bind "enter:execute-silent([ -n {6} ] && { mkdir -p ~/.cache/kahf; f=~/.cache/kahf/\$(basename {6}); [ -f \$f ] || curl -sLo \$f {6}; termux-media-player play \$f; })" \
+        --bind "ctrl-s:execute-silent(termux-media-player stop)" \
         --color="bg:#191724,bg+:#26233A,border:#EBBCBA,fg:#E0DEF4"
 fi
 
