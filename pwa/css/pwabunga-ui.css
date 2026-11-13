@@ -19,16 +19,25 @@
 ---------------------------------------------------------------------------- */
 
 :root {
-  --pwa-color-primary: #735DA5;
-  --pwa-color-primary-opacity: rgba(93, 0, 216, 0.9);
-  --pwa-color-secondary: #D3C5E5;
-  --pwa-color-secondary-opacity: rgba(223, 205, 247, 0.9);
-  --pwa-color-light: #FFFFFF;
-  --code-bg: #161b22;
-  --code-text: #2b1d3a;
-  --pwa-color-dark: #000;
-  --pwa-color-gray: #ccc;
-  --pwa-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* Warna Utama (Terakota) */
+  --pwa-color-primary: #E2725B;
+  --pwa-color-primary-opacity: rgba(226, 114, 91, 0.9);
+
+  /* Warna Sekunder (Krem Gading) */
+  --pwa-color-secondary: #F5E9D4;
+  --pwa-color-secondary-opacity: rgba(245, 233, 212, 0.9);
+
+  /* Warna Netral & Teks */
+  --pwa-color-light: #FFFDF9;
+  --pwa-color-dark: #2C221E;
+  --pwa-color-gray: #D5C8BD;
+
+  /* Warna Blok Kode (Kontras Tinggi) */
+  --code-bg: #261E1B;
+  --code-text: #F5E9D4;
+
+  /* Bayangan & Layer */
+  --pwa-box-shadow: rgba(44, 34, 30, 0.15) 0px 3px 8px;
   --z-index-1: 1;
   --z-index-2: 2;
 }
