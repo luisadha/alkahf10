@@ -22,6 +22,7 @@
   /* Warna Utama (Terakota) */
   --pwa-color-primary: #E2725B;
   --pwa-color-primary-opacity: rgba(226, 114, 91, 0.9);
+  --pwa-color-primary-dark: #B85440;
 
   /* Warna Sekunder (Krem Gading) */
   --pwa-color-secondary: #F5E9D4;
@@ -617,10 +618,10 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
   width: 100%;
   font-family: ui-monospace, "SFMono-Regular", Consolas, "Roboto Mono", monospace;
   font-size: 13px;
-  color: #f0f0f0;
-  background: #011627;
+  color: var(--pwa-color-secondary);
+  background: var(--code-bg);
   border: none;
-  border-left: 4px solid #A569BD; /* hijau khas W3Schools */
+  border-left: 4px solid var(--pwa-color-primary); /* terakota khas autumn */
   padding: 10px 12px; 
  /* padding: 10px 75px 10px 12px; /* kanan lebih lebar */
   border-radius: 6px;
@@ -636,7 +637,7 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
   right: 8px;
   transform: translateY(-50%);
   margin-top: 6px;
-  background: #A569BD;
+  background: var(--pwa-color-primary);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -649,17 +650,17 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
 /* 🌙 Mode Gelap */
 @media (prefers-color-scheme: dark) {
   #installCmd {
-    background: #161b22;
-    color: #e6edf3;
-    border-left: 4px solid #A569BD;
+    background: var(--code-bg);
+    color: var(--code-text);
+    border-left: 4px solid var(--pwa-color-primary);
   }
 
   #myFixCopy {
-    background: #A569BD;
+    background: var(--pwa-color-primary);
   }
 
   #myFixCopy:hover {
-    background: #6C3483;
+    background: var(--pwa-color-primary-dark);
   }
 }
 
@@ -715,9 +716,9 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
 @media (prefers-color-scheme: dark) {
   .table-container td,
   .table-container th {
-    border-color: #30363d;
-    background: #161b22;
-    color: #e6edf3;
+    border-color: #4A3A32;
+    background: var(--pwa-color-dark);
+    color: var(--code-text);
   }
 }
 
@@ -732,7 +733,7 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
   align-items: center;
   gap: 5px;
   padding: 6px 12px;
-  background: #A569BD;
+  background: var(--pwa-color-primary);
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -743,7 +744,7 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
 }
 
 .copy-container button:hover {
-  background: #6C3483;
+  background: var(--pwa-color-primary-dark);
   transform: scale(1.05)
 }
 
@@ -757,12 +758,12 @@ Retrieved 2026-04-29, License - CC BY-SA 3.0
 /* kalau latar tombolnya terang, balik ke ikon hitam */
 @media (prefers-color-scheme: light) {
   .copy-container button {
-    background: #f0f0f0;
-    color: #111;
+    background: var(--pwa-color-light);
+    color: var(--pwa-color-dark);
   }
 
   .copy-container button:hover {
-    background: #ddd;
+    background: var(--pwa-color-secondary);
   }
 
   .copy-container button img {
