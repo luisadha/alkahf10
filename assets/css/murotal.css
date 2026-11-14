@@ -1,0 +1,208 @@
+/* Pemutar murotal Al-Kahfi 1-10 — tema autumn (terakota & krem) */
+
+.murotal {
+  --mt-terakota: #E2725B;
+  --mt-terakota-tua: #B85440;
+  --mt-krem: #FFF8EC;
+  --mt-krem-tua: #F4E4CC;
+  --mt-teks: #4A2C22;
+  --mt-teks-lembut: #8A6A5C;
+
+  max-width: 720px;
+  margin: 1.5rem auto;
+  padding: 1.25rem;
+  background: var(--mt-krem);
+  color: var(--mt-teks);
+  border: 1px solid var(--mt-krem-tua);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(184, 84, 64, 0.12);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.murotal h2 {
+  margin: 0 0 .25rem;
+  font-size: 1.25rem;
+}
+
+.murotal-qari {
+  margin: 0 0 1rem;
+  font-size: .85rem;
+  color: var(--mt-teks-lembut);
+}
+
+/* ---------- tampilan ayat ---------- */
+.murotal-ayat {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--mt-krem-tua);
+  min-height: 11rem;
+}
+
+.murotal-label {
+  display: inline-block;
+  margin-bottom: .5rem;
+  padding: .15rem .6rem;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--mt-terakota);
+  border-radius: 999px;
+}
+
+.murotal-arab {
+  margin: .25rem 0 .75rem;
+  font-family: "Scheherazade New", "Amiri", "Noto Naskh Arabic", "Traditional Arabic", serif;
+  font-size: 1.9rem;
+  line-height: 2.2;
+  text-align: right;
+}
+
+.murotal-latin {
+  margin: 0 0 .5rem;
+  font-style: italic;
+  color: var(--mt-terakota-tua);
+}
+
+.murotal-arti {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+/* ---------- progres ---------- */
+.murotal-progress {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .75rem;
+  font-size: .8rem;
+  color: var(--mt-teks-lembut);
+  font-variant-numeric: tabular-nums;
+}
+
+.murotal-progress input[type="range"] {
+  flex: 1;
+  accent-color: var(--mt-terakota);
+}
+
+/* ---------- tombol kontrol ---------- */
+.murotal-kontrol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+
+.murotal button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.murotal-btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--mt-terakota-tua);
+  background: var(--mt-krem-tua);
+  border: none;
+  border-radius: 50%;
+  transition: background .15s, transform .1s;
+}
+
+.murotal-btn:hover { background: #ecd3b0; }
+.murotal-btn:active { transform: scale(.94); }
+
+.murotal-btn.utama {
+  width: 56px;
+  height: 56px;
+  font-size: 1.4rem;
+  color: #fff;
+  background: var(--mt-terakota);
+}
+
+.murotal-btn.utama:hover { background: var(--mt-terakota-tua); }
+
+.murotal button:focus-visible,
+.murotal select:focus-visible,
+.murotal input:focus-visible {
+  outline: 3px solid var(--mt-terakota-tua);
+  outline-offset: 2px;
+}
+
+/* ---------- pengaturan ---------- */
+.murotal-opsi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1.25rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: .85rem;
+}
+
+.murotal-opsi label {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.murotal-opsi select {
+  padding: .2rem .4rem;
+  color: var(--mt-teks);
+  background: #fff;
+  border: 1px solid var(--mt-krem-tua);
+  border-radius: 6px;
+}
+
+.murotal-opsi input[type="checkbox"] {
+  accent-color: var(--mt-terakota);
+}
+
+/* ---------- daftar ayat ---------- */
+.murotal-daftar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.murotal-daftar button {
+  width: 100%;
+  padding: .55rem 0;
+  font-weight: 600;
+  color: var(--mt-terakota-tua);
+  background: #fff;
+  border: 1px solid var(--mt-krem-tua);
+  border-radius: 10px;
+  transition: background .15s, color .15s;
+}
+
+.murotal-daftar button:hover { background: var(--mt-krem-tua); }
+
+.murotal-daftar button[aria-current="true"] {
+  color: #fff;
+  background: var(--mt-terakota);
+  border-color: var(--mt-terakota);
+}
+
+.murotal-status {
+  min-height: 1.2em;
+  margin: .75rem 0 0;
+  font-size: .8rem;
+  text-align: center;
+  color: var(--mt-teks-lembut);
+}
+
+.murotal-status.galat { color: #A33A2A; }
+
+@media (max-width: 480px) {
+  .murotal { margin: 1rem .5rem; padding: 1rem; }
+  .murotal-arab { font-size: 1.6rem; }
+}
