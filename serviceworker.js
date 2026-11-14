@@ -19,7 +19,7 @@
 
 // -- Cache name and version
 const cacheTitle = 'kahf'
-const cacheVersion = 'v1.0'
+const cacheVersion = 'v1.1'
 const cacheName = cacheTitle + '-' + cacheVersion
 
 // -- static assets
@@ -34,8 +34,12 @@ const contentToCache = [
   // - CSS
   'assets/css/pwabunga.css',
   'assets/css/styles.css',
+  'assets/css/murotal.css',
   // - JS
   'assets/js/scripts.js',
+  'assets/js/murotal.js',
+  // - Data
+  'kahf.json',
   // - PWA
   'pwa/css/pwabunga-ui.css',
   'pwa/icons/apple-touch-icon.png',
@@ -315,6 +319,15 @@ self.addEventListener('message', (event) => {
 self.addEventListener('fetch', (event) => {
   // - Get the request object from the event
   const request = event.request
+  // - Audio murotal (everyayah.com) langsung ke jaringan: permintaan
+  //   Range/media lintas-origin tidak cocok dengan strategi cache
+  if (
+    request.destination === 'audio' ||
+    request.headers.has('range') ||
+    new URL(request.url).origin !== self.location.origin
+  ) {
+    return
+  }
   // - Define a mapping of request processing methods
   const methods = {
     'cacheOnly': cacheOnly,
