@@ -1,4 +1,4 @@
-# On progress (Dalam pengerjaan)
+# Project selesai | Catatan aktivitas
 
 # Hari ke 1
 
@@ -21,7 +21,13 @@
 
 ~Menambahkan nama project ini ke database not-echo-not-true.carrd.co~
 
-Saya akan melakukan perbaikan dari sisi front end nanti
+~Saya akan melakukan perbaikan dari sisi front end nanti~
+
+# Hari ke 4
+
+~Saya mengubah tema~
+
+~Saya menambahkan fitur audio/murotal pada situs dan menjadikannya berjalan di PWA~
 
 # Credits 
 - Luisadha
